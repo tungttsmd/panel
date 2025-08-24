@@ -14,6 +14,7 @@ use BackedEnum;
 use Filament\Actions\Action;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
@@ -55,7 +56,7 @@ class CustomerResource extends Resource
                 //
             ])
             ->actions([
-                Action::make('view')
+                ViewAction::make('view')
                     ->label('Xem')
                     ->icon('heroicon-o-eye'),
                 EditAction::make(),

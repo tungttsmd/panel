@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Customers\Pages;
 
 use App\Filament\Resources\Customers\CustomerResource;
+use Filament\Actions\Action;
 use Filament\Actions\EditAction;
 use Filament\Resources\Pages\ViewRecord;
 
@@ -13,7 +14,12 @@ class ViewCustomer extends ViewRecord
     protected function getHeaderActions(): array
     {
         return [
-            EditAction::make(),
+            Action::make('list')
+                ->label('Danh sách')
+                ->url($this->getResource()::getUrl('index'))
+                ->icon('heroicon-o-arrow-left')
+                ->color('gray')->modalFooterActionsAlignment('start'),
+            EditAction::make()->color('warning'),
         ];
     }
 }
